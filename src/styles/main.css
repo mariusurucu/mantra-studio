@@ -3219,3 +3219,9 @@ input, select, textarea {
 			}
 
 	}
+
+/* nav styles */
+
+.hidden {
+	display: none;
+}
