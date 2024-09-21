@@ -1,15 +1,15 @@
 ---
 import { Image } from "astro:assets"
-import avatar from '../assets/logo_small.png';
+import avatar from '../assets/home.png';
+import logo from '../assets/mntr.png';
 ---
 
 <!-- Header -->
 <header id="header">
-	<div class="inner">
+	<div class="inner align-center">
 		<a href="/" class="image avatar"><Image src={avatar} alt="" /></a>
-		<h1>
-			<strong>We are Mantra</strong> a multidisciplinary interior architecture studio, 
-			dedicated to creating exceptional spaces that inspire, transform, and elevate the human experience.
-		</h1>
+	</div>
+	<div class="inner align-center">
+		<a href="/" class="avatar "><Image src={logo} alt="" width="300"/></a>
 	</div>
 </header>
