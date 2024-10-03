@@ -4,7 +4,7 @@
 	<br />
 	<div class="row">
 		<div class="col-8 col-12-small">
-			<form name="contact" method="POST" netlify>
+			<form name="contactform" method="POST" netlify data-netlify="true">
 				<div class="row gtr-uniform gtr-50">
 					<div class="col-6 col-12-xsmall">
 						<input type="text" name="name" id="name" placeholder="Name" />
@@ -15,10 +15,10 @@
 					<div class="col-12">
 						<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
 					</div>
-				</div>
-				<p>
-					<button type="submit">Send Message</button>
-				</p>
+				</div><br />
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" /></li>
+				</ul>
 			</form>
 		</div>
 		<div class="col-4 col-12-small"><br />
