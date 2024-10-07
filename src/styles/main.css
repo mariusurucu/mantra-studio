@@ -3225,3 +3225,7 @@ input, select, textarea {
 .hidden {
 	display: none;
 }
+
+.cover-fit {
+	object-fit: cover;
+  }
