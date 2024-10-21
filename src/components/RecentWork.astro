@@ -4,7 +4,7 @@ import { Picture } from 'astro:assets';
 
 import full_1 from '../assets/fulls/ap6/01.jpg';
 import full_2 from '../assets/fulls/DRM/1.jpg';
-import full_3 from '../assets/fulls/INT/1.jpg';
+import full_3 from '../assets/fulls/ap9/10.jpg';
 import full_4 from '../assets/fulls/LVG1/1.jpg';
 ---
 
@@ -13,20 +13,20 @@ import full_4 from '../assets/fulls/LVG1/1.jpg';
 	<h2>Recent Work</h2>
 	<div class="row">
 		<article class="col-6 col-12-xsmall work-item">
+			<a href={full_3.src} class="image fit thumb"><Image src={full_3} alt="" class="cover-fit" width="300" height="300" /></a>
+			<h3>AP_9</h3>
+		</article>
+		<article class="col-6 col-12-xsmall work-item">
 			<a href={full_1.src} class="image fit thumb"><Picture src={full_1} alt="" class="cover-fit" width="300" height="300" /></a>
-			<h3>AP6</h3>
+			<h3>AP_6</h3>
 		</article>
 		<article class="col-6 col-12-xsmall work-item">
 			<a href={full_2.src} class="image fit thumb"><Picture src={full_2} alt="" class="cover-fit" width="300" height="300" /></a>
-			<h3>DRM</h3>
-		</article>
-		<article class="col-6 col-12-xsmall work-item">
-			<a href={full_3.src} class="image fit thumb"><Image src={full_3} alt="" class="cover-fit" width="300" height="300" /></a>
-			<h3>INT</h3>
+			<h3>DRM_1</h3>
 		</article>
 		<article class="col-6 col-12-xsmall work-item">
 			<a href={full_4.src} class="image fit thumb"><Image src={full_4} alt="" class="cover-fit" width="300" height="300" /></a>
-			<h3>LVG1</h3>
+			<h3>LVG_1</h3>
 		</article>
 	</div>
 	<ul class="actions">
