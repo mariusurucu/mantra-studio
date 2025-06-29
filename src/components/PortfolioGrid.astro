@@ -47,9 +47,9 @@ for (const proj of filtered) {
   ))}
 </div>
 
+<section id="two">
 {Object.entries(grouped).map(([groupName, groupProjects]) => (
   <>
-    <section id="two">
     <h2>{groupName}</h2>
     <div class="row">
       {groupProjects.map(project => (
@@ -61,6 +61,6 @@ for (const proj of filtered) {
         </article>
       ))}
     </div>
-    </section>
   </>
 ))}
+</section>
