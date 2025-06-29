@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets"
+import about_me from '../assets/aboutme.jpeg';
+---
+
 <!-- One -->
 <section id="one">
 	<header class="major">
@@ -6,12 +11,23 @@
 		</h2>
 		<p><b>Interior Designer | Designer | Artistic Director</b></p>
 	</header>
-	<p>
-		Our studio spaces are inspired by the beauty, essence, and culture of nature. We believe in the power of light, 
-		the senses, and the ability to connect with places.
-		<br /><br />
-		Led by Andrei Valentin Pavel, our team brings a multidisciplinary approach to every project. 
-		From renovations and extensions to custom furniture and objects, we create spaces that are not only visually 
-		stunning but also foster a sense of connection and well-being.
-	</p>
+	<div style="display: flex; align-items: center; gap: 2rem;">
+		<div style="flex: 1;">
+		  <Image 
+			src={about_me} 
+			alt="Interior Designer | Designer | Artistic Director"  
+			style="max-width:100%; height:auto; display:block; margin:0 auto;" 
+		  />
+		</div>
+		<div style="flex: 1;">
+		  <p>
+			Our studio spaces are inspired by the beauty, essence, and culture of nature. We believe in the power of light, 
+			the senses, and the ability to connect with places.
+			<br /><br />
+			Led by Andrei Valentin Pavel, our team brings a multidisciplinary approach to every project. 
+			From renovations and extensions to custom furniture and objects, we create spaces that are not only visually 
+			stunning but also foster a sense of connection and well-being.
+		  </p>
+		</div>
+	  </div>
 </section>
