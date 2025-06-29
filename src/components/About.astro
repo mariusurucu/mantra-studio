@@ -1,3 +1,9 @@
+---
+import { Image } from "astro:assets"
+
+import about_me from '../assets/fulls/ap6/01.jpg';
+---
+
 <!-- One -->
 <section id="one">
 	<header class="major">
@@ -14,4 +20,8 @@
 		From renovations and extensions to custom furniture and objects, we create spaces that are not only visually 
 		stunning but also foster a sense of connection and well-being.
 	</p>
+	<article class="col-6 col-12-xsmall work-item">
+		<a href={about_me.src} class="image fit thumb"><Image src={about_me} alt="" class="cover-fit" width="300" height="300" /></a>
+		<h3>AP_9</h3>
+	</article>
 </section>

@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import { projects } from "../data/projects";
+const { filter = "All" } = Astro.props as { filter?: string };
+
+function getCategory(group: string) {
+  if (group.startsWith("AP_")) return "Apartments";
+  if (group.startsWith("DRM_")) return "Bedrooms";
+  if (group.startsWith("LVG_")) return "Livings";
+  if (group.startsWith("BTH_")) return "Baths";
+  return "Other";
+}
+
+const categories = [
+  { label: "All", value: "All" },
+  { label: "Apartments", value: "Apartments" },
+  { label: "Bedrooms", value: "Bedrooms" },
+  { label: "Livings", value: "Livings" },
+  { label: "Baths", value: "Baths" },
+  { label: "Other", value: "Other" }
+];
+
+let filtered = projects;
+if (filter && filter !== "All") {
+  filtered = projects.filter((p) => getCategory(p.group) === filter);
+}
+
+// Type for grouped
+const grouped: Record<string, typeof projects> = {};
+for (const proj of filtered) {
+  if (!grouped[proj.group]) grouped[proj.group] = [];
+  grouped[proj.group].push(proj);
+}
+---
+
+<div style="margin-bottom:1.5rem;">
+  {categories.map(c => (
+    <form method="get" style="display:inline;">
+      <input type="hidden" name="filter" value={c.value} />
+      <button
+        type="submit"
+        style={`padding:0.5em 1em;margin:0 0.25em;border-radius:4px;border:none;cursor:pointer;
+          background:${filter === c.value ? '#333' : '#eee'};
+          color:${filter === c.value ? '#fff' : '#000'};`}
+      >{c.label}</button>
+    </form>
+  ))}
+</div>
+
+<p>Current filter: {filter}</p>
+<p>Filtered items: {filtered.length}</p>
+
+{Object.entries(grouped).map(([groupName, groupProjects]) => (
+  <>
+    <h2>{groupName}</h2>
+    <div class="row">
+      {groupProjects.map(project => (
+        <article class="col-6 col-12-xsmall work-item">
+          <a href={project.image.src} class="image fit thumb">
+            <Image src={project.image} alt="" class="cover-fit" width="300" height="300" />
+          </a>
+          <h3 class="align-center">&#10022;</h3>
+        </article>
+      ))}
+    </div>
+  </>
+))}
